@@ -1,7 +1,5 @@
 <script setup>
-/**
- * Badge component for skills, tags, and status labels.
- */
+/** Badge for skills, tags and status labels. */
 defineProps({
   variant: {
     type: String,
@@ -12,7 +10,7 @@ defineProps({
 
 const variantClasses = {
   default: 'bg-surface-overlay text-text-primary border-border-subtle',
-  accent: 'bg-accent-muted text-accent border-accent/20',
+  accent: 'bg-accent-muted text-accent-text border-accent/20',
   muted: 'bg-surface text-text-muted border-border-subtle',
   outline: 'bg-transparent text-text-secondary border-border',
 }

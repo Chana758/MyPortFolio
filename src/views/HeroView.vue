@@ -1,90 +1,56 @@
 <script setup>
 import channaPhoto from '@/assets/images/channa.jpg'
-
-const profile = {
-  name: 'Sam Channa',
-  tagline: 'Passionate 2nd-year ITE student at RUPP, building modern web applications with Vue.js and Laravel.',
-  location: 'Phnom Penh, Cambodia'
-}
-
-const scrollTo = (id) => {
-  const element = document.querySelector(id)
-  element?.scrollIntoView({ behavior: 'smooth' })
-}
+import Button from '@/components/ui/Button.vue'
+import { profile } from '@/data/profile.js'
 </script>
-x
+
 <template>
   <section id="hero" class="relative flex min-h-screen items-center overflow-hidden pt-20">
-    <div class="pointer-events-none absolute inset-0 overflow-hidden">
-      <div class="absolute -top-32 left-1/2 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-accent/20 blur-[120px]" />
-      <div class="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <div class="animate-drift absolute -top-32 left-1/2 h-[480px] w-[680px] -translate-x-1/2 rounded-full bg-accent/20 blur-[120px]" />
+      <div class="animate-drift absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-accent/10 blur-3xl" style="animation-delay: -6s" />
     </div>
 
-    <div class="section-container relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2">
-      
-      <div class="animate-fade-up">
-        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-sm text-emerald-400">
-          <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
-          Available for work
+    <div class="section-container relative z-10 grid items-center gap-12 py-12 md:py-12 lg:grid-cols-2">
+      <div>
+        <div class="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-sm text-emerald-600 dark:text-emerald-400" style="--d: 0s">
+          <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
+          Available for internship
         </div>
 
-        <p class="mb-3 text-sm font-medium uppercase tracking-widest text-accent-light">
-          Hello, I'm
-        </p>
+        <p class="animate-fade-up mb-3 text-lg text-text-secondary" style="--d: 0.1s">Hello, I'm</p>
 
-        <h1 class="text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
+        <h1 class="animate-fade-up text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl" style="--d: 0.2s">
           {{ profile.name }}
-          <span class="block bg-gradient-to-r from-accent to-violet-800 bg-clip-text text-transparent">
-            Full Stack Developer
-          </span>
+          <span class="block text-accent-text">{{ profile.role }}</span>
         </h1>
 
-        <p class="mt-6 max-w-lg text-lg leading-relaxed text-slate-400">
+        <p class="animate-fade-up mt-6 max-w-lg text-lg leading-relaxed text-text-secondary" style="--d: 0.35s">
           {{ profile.tagline }}
         </p>
 
-        <div class="mt-10 flex flex-wrap gap-4">
-          <button @click="scrollTo('#projects')" class="rounded-xl bg-accent px-8 py-3 font-medium text-white transition-all hover:bg-accent-light hover:shadow-lg hover:shadow-accent/25">
-            View Projects
-          </button>
-          <button @click="scrollTo('#contact')" class="rounded-xl border border-slate-700 bg-slate-800/50 px-8 py-3 font-medium text-slate-300 transition-all hover:border-accent/50 hover:text-white">
-            Get in Touch
-          </button>
+        <!-- Download CV lives in the Navbar, so the hero only has the two main actions -->
+        <div class="animate-fade-up mt-10 flex flex-wrap gap-3" style="--d: 0.5s">
+          <Button href="#projects" variant="primary" size="lg">
+            View projects
+          </Button>
+          <Button href="#contact" variant="secondary" size="lg" class="group gap-2">
+            Get in touch
+            <svg
+              class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </Button>
         </div>
       </div>
 
-      <!-- Photo -->
-      <div class="relative hidden lg:flex lg:justify-center">
-        <div class="photo-ring">
-          <img :src="channaPhoto" alt="Sam Channa" class="photo-img" />
+      <div class="animate-fade-up hidden lg:flex lg:justify-center" style="--d: 0.4s">
+        <div class="animate-float rounded-full bg-gradient-to-br from-accent/60 to-accent-hover/30 p-2 shadow-2xl shadow-accent/20">
+          <img :src="channaPhoto" :alt="`Photo of ${profile.name}`" class="h-80 w-80 rounded-full object-cover" />
         </div>
       </div>
-
     </div>
   </section>
 </template>
-
-<style scoped>
-.photo-ring {
-  width: 340px;
-  height: 340px;
-  border-radius: 50%;
-  padding: 8px; /* Thinner border feel */
-  /* Updated background to be a softer gradient transition */
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.4), rgba(124, 58, 237, 0.4));
-  box-shadow: 0 0 40px rgba(163, 117, 243, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.photo-img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  /* Change object-position to center to show full image content */
-  object-fit: cover;
-  object-position: center; 
-  display: block;
-}
-</style>

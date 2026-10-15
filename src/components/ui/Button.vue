@@ -40,7 +40,7 @@ const variantClasses = {
 const sizeClasses = {
   sm: 'px-4 py-2 text-sm',
   md: 'px-6 py-2.5 text-sm',
-  lg: 'px-8 py-3 text-base',
+  lg: 'px-5 py-3 text-base sm:px-8',
 }
 </script>
 
@@ -50,7 +50,7 @@ const sizeClasses = {
     :href="href"
     :type="href ? undefined : type"
     :disabled="disabled"
-    class="inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50"
+    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50"
     :class="[variantClasses[variant], sizeClasses[size]]"
   >
     <slot />

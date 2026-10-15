@@ -1,84 +1,114 @@
-/**
- * Portfolio projects data.
- * Consumed by the Projects view via the ProjectCard component.
- */
+import p1 from '../assets/images/hotel.png'
+import p2 from '../assets/images/crypto.png'
+import p3 from '../assets/images/khmer_tourist.png'
+import p4 from '../assets/images/lumiere.png'
+import p5 from '../assets/images/coffee.png'
+import p6 from '../assets/images/food.png'
+import p7 from '../assets/images/library.png'
+import p8 from '../assets/images/gamax.png'
+const GH = 'https://github.com/Chana758'
 
 export const projects = [
   {
-    id: 'portfolio-v2',
-    title: 'Personal Portfolio',
+    id: 'food-shop',
+    type: 'fullstack',
+    title: 'Food Shop',
     description:
-      'A modern, dark-mode portfolio website built with Vue 3, Vite, and Tailwind CSS. Features smooth scrolling, responsive layout, and modular component architecture.',
-    image: null,
-    tags: ['Vue.js', 'Vite', 'Tailwind CSS', 'JavaScript'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/yourusername/portfolio',
-    featured: true,
-    year: '2025',
+      'Restaurant ordering system with Admin, Staff and Customer roles. Manages products, orders, tables and reservations, with a POS that supports cash, card and KHQR payments.',
+    image: p6,
+    tags: ['Laravel', 'React.js', 'PostgreSQL', 'REST API'],
+    links: [
+      { label: 'Frontend', url: `${GH}/Food_Shop_front` },
+      { label: 'Backend', url: `${GH}/Food_Shop_Backend` },
+    ],
   },
   {
-    id: 'task-manager',
-    title: 'Task Manager App',
+    id: 'library',
+    type: 'fullstack',
+    title: 'Library Management',
     description:
-      'A full-stack task management application with user authentication, CRUD operations, and real-time status updates. Built to practice REST API design and state management.',
-    image: null,
-    tags: ['Vue.js', 'Node.js', 'Express', 'MongoDB'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/yourusername/task-manager',
-    featured: true,
-    year: '2025',
+      'Smart Nexus LMS: a bilingual (Khmer/English) library system with role-based access. Covers borrowing and returns, overdue tracking, reservations, fines, QR scanning, member cards, reports, notifications and backup/restore.',
+    image: p7,
+    tags: ['Laravel', 'Vue.js', 'PostgreSQL', 'REST API'],
+    links: [
+      { label: 'Frontend', url: `${GH}/SYSTEM_LMS` },
+      { label: 'Backend', url: `${GH}/SYSTEM_LMS_API` },
+    ],
   },
   {
-    id: 'ecommerce-ui',
-    title: 'E-Commerce UI Kit',
+    id: 'gamax',
+    type: 'fullstack',
+    title: 'GAMAX E-Commerce',
     description:
-      'A responsive e-commerce frontend with product listings, cart functionality, and checkout flow. Focused on component reusability and mobile-first design principles.',
-    image: null,
-    tags: ['Vue.js', 'Tailwind CSS', 'Pinia', 'REST API'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/yourusername/ecommerce-ui',
-    featured: false,
-    year: '2024',
+      'E-commerce platform with a React frontend using Redux for state management, connected to a Laravel REST API.',
+    image: p8,
+    tags: ['Laravel', 'React.js', 'Redux', 'PostgreSQL', 'REST API'],
+    links: [
+      { label: 'Frontend', url: `${GH}/EC-GAMAX-Front` },
+      { label: 'Backend', url: `${GH}/E-Commers_GAMIX` },
+    ],
   },
   {
-    id: 'weather-dashboard',
-    title: 'Weather Dashboard',
+    id: 'hotel',
+    type: 'fullstack',
+    title: 'KETO Hotel Booking',
     description:
-      'A clean weather application that fetches live data from a public API. Displays current conditions, forecasts, and location-based search with a minimalist interface.',
-    image: null,
-    tags: ['JavaScript', 'API Integration', 'CSS3', 'Responsive'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/yourusername/weather-dashboard',
-    featured: false,
-    year: '2024',
+      'Hotel booking website started from a free template and extended with a Laravel backend to practice admin panel development. Guests browse rooms, book by date and contact the hotel. Admins manage rooms, bookings, gallery, messages and site settings. Hosted on a free plan, so the first load can take about 50 seconds.',
+    image: p1,
+    tags: ['Laravel', 'Livewire', 'TiDB Cloud', 'Docker', 'Bootstrap'],
+    links: [
+      { label: 'Live demo', url: 'https://hotel-2xmb.onrender.com' },
+      { label: 'Code', url: `${GH}/Hotel` },
+    ],
   },
   {
-    id: 'blog-cms',
-    title: 'Blog CMS',
+    id: 'cryptography',
+    type: 'frontend',
+    title: 'Cryptography',
     description:
-      'A content management system for a personal blog with markdown support, category tagging, and an admin dashboard for creating and editing posts.',
-    image: null,
-    tags: ['Vue.js', 'Node.js', 'MySQL', 'Markdown'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/yourusername/blog-cms',
-    featured: false,
-    year: '2024',
+      'Interactive learning site built with React for classical ciphers, transposition and RSA, with quizzes.',
+    image: p2,
+    tags: ['React.js', 'Responsive'],
+    links: [
+      { label: 'Live demo', url: 'https://crytography-dusky.vercel.app/' },
+      { label: 'Code', url: `${GH}/CRYTOGRAPHY` },
+    ],
   },
   {
-    id: 'student-portal',
-    title: 'Student Portal Mockup',
+    id: 'khmerjourney',
+    type: 'frontend',
+    title: 'KhmerJourney',
     description:
-      'A UI/UX prototype for a university student portal featuring course schedules, grade tracking, and announcement feeds. Designed as a coursework group project.',
-    image: null,
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'Figma'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/yourusername/student-portal',
-    featured: false,
-    year: '2023',
+      'Cambodia tourism website built with React, covering destinations, local services and travel information.',
+    image: p3,
+    tags: ['React.js', 'Responsive'],
+    links: [
+      { label: 'Live demo', url: 'https://tourist-cambodia-n9eq.vercel.app' },
+      { label: 'Code', url: `${GH}/Tourist_CAMBODIA` },
+    ],
+  },
+  {
+    id: 'lumiere',
+    type: 'frontend',
+    title: 'Lumière',
+    description: 'Skincare store front with product pages, built with React and Firebase.',
+    image: p4,
+    tags: ['React.js', 'Firebase', 'Responsive'],
+    links: [
+      { label: 'Live demo', url: 'https://skincare-firebase.vercel.app' },
+      { label: 'Code', url: `${GH}/Skincare_Firebase` },
+    ],
+  },
+  {
+    id: 'brew-soul',
+    type: 'frontend',
+    title: 'Brew & Soul',
+    description: 'Coffee shop website with home, menu, about, gallery and contact pages.',
+    image: p5,
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    links: [
+      { label: 'Live demo', url: 'https://coffee-shop-five-ochre.vercel.app' },
+      { label: 'Code', url: `${GH}/Coffee_Shop` },
+    ],
   },
 ]
-
-/**
- * Returns featured projects for hero or highlight sections.
- */
-export const getFeaturedProjects = () => projects.filter((p) => p.featured)

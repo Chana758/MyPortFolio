@@ -5,8 +5,8 @@ import { ref, onMounted, onUnmounted } from 'vue'
  * Useful for scroll-triggered fade-in animations.
  *
  * @param {Object} options
- * @param {number} options.threshold - Visibility ratio to trigger (0–1)
- * @param {string} options.rootMargin - Margin around the root (e.g. '0px 0px -80px 0px')
+ * @param {number} options.threshold 
+ * @param {string} options.rootMargin 
  */
 export function useIntersectionObserver(options = {}) {
   const { threshold = 0.15, rootMargin = '0px 0px -60px 0px' } = options
