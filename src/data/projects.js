@@ -18,7 +18,7 @@ export const projects = [
     image: p6,
     tags: ['Laravel', 'React.js', 'PostgreSQL', 'REST API'],
     links: [
-      { label: 'Frontend', url: `${GH}/Food_Shop_front` },
+      { label: 'Frontend', url: `${GH}/Food_Shop_API` },
       { label: 'Backend', url: `${GH}/Food_Shop_Backend` },
     ],
   },
