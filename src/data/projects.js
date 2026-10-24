@@ -69,6 +69,7 @@ export const projects = [
     title: 'Cryptography',
     description:
       'Interactive learning site built with React for classical ciphers, transposition and RSA, with quizzes to test understanding.',
+    image: p2,
     tags: ['React.js', 'Vite','Tailwind CSS','JavaScript'],
     links: [
       { label: 'Live demo', url: 'https://crytography-dusky.vercel.app/' },
